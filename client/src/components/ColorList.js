@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import axios from "axios";
 import { axiosWithAuth } from "../axiosWithAuth";
 import { isNamedImports } from "typescript";
+import { Link } from "react-router-dom";
 
 const initialColor = {
   color: "",
   code: { hex: "" }
 };
 
-const ColorList = ({ colors, updateColors }) => {
+const ColorList = ({ colors, updateColors, logout }) => {
   console.log(colors);
   const [editing, setEditing] = useState(false);
   const [colorToEdit, setColorToEdit] = useState(initialColor);
@@ -58,6 +59,9 @@ const ColorList = ({ colors, updateColors }) => {
   console.log({ colorToEdit });
   return (
     <div className="colors-wrap">
+      <div className="button-row">
+        <button onClick={() => logout()}>logout</button>
+      </div>
       <p>colors</p>
       <ul>
         {colors.map((color, index) => (
@@ -119,9 +123,6 @@ const ColorList = ({ colors, updateColors }) => {
           )}
         </div>
       </form>
-
-      <div className="spacer" />
-      {/* stretch - build another form here to add a color */}
     </div>
   );
 };
