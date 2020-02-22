@@ -17,8 +17,10 @@
   },
   "homepage": "hhttps://github.com/LambdaSchool/SPA-Routing-React#readme",
   "dependencies": {
+    "@emotion/core": "^10.0.27",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "react-spinners": "^0.8.0"
   }
 }
